@@ -1,6 +1,7 @@
 package com.jpmc.midascore.foundation;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.Column;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Transaction {
@@ -9,6 +10,17 @@ public class Transaction {
     private float amount;
 
     public Transaction() {
+    }
+    // Inside Transaction class
+    @Column(nullable = false)
+    private float incentive = 0.0f;
+
+    public float getIncentive() {
+        return incentive;
+    }
+
+    public void setIncentive(float incentive) {
+        this.incentive = incentive;
     }
 
     public Transaction(long senderId, long recipientId, float amount) {
