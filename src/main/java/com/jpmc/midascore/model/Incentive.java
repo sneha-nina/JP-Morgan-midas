@@ -9,7 +9,7 @@ public class Incentive {
         this.amount = amount;
     }
 
-    public double getAmount() {
+    public float getAmount() {
         return amount;
     }
 
